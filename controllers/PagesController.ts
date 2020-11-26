@@ -33,7 +33,7 @@ export default class PagesController {
        {
            request.log.info( "SW - /" );
 
-           reply.view('./assets/template/index.ejs');
+           reply.view('./assets/templates/index.ejs');
        }
        catch(error) {
             request.log.error( error );
@@ -60,7 +60,7 @@ export default class PagesController {
                             params,
                             this.graph.find( params ) );
 
-           reply.view('./assets/template/graph.ejs', path);
+           reply.view('./assets/templates/graph.ejs', path);
        }
        catch(error) {
             request.log.error( error );

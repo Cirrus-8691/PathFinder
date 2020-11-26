@@ -28,7 +28,7 @@ npm start
 <p align="center">
     <img
       alt="hello"
-      src="./assets/hello.jpeg"
+      src="./assets/images/hello.jpeg"
     />
 </p>
 
@@ -40,7 +40,7 @@ npm start
 <p align="center">
     <img
       alt="error 500"
-      src="./assets/exception.jpeg"
+      src="./assets/images/exception.jpeg"
     />
 </p>
 
@@ -60,7 +60,7 @@ The other workflow <a href="./.github/workflows/node.js.yml">Node.js CI</a> is u
 <p align="center">
     <img
       alt="CI"
-      src="./assets/ci.jpeg"
+      src="./assets/images/ci.jpeg"
       width="600"
     />
 </p>
@@ -70,7 +70,7 @@ You can see the result of the Unit tests in the web console.
 <p align="center">
     <img
       alt="CI"
-      src="./assets/viewTestResult.jpeg"
+      src="./assets/images/viewTestResult.jpeg"
       width="600"
     />
 </p>
