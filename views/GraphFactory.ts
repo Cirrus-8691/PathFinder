@@ -14,10 +14,16 @@ export default class GraphFactory {
      */
     public static Build(graph : ReadonlyArray<Vertex>) : string[]
     {
-        return [ 
-                " (0)------->(1) ",
-                "  \\          /  ",
-                "   --->(2)<--   " 
+        let vue = "";
+        for(let id=0; id<graph.length; id++) {
+            vue += id + "-" + graph[id]
+        }
+         return [ 
+                "0-4" ,
+                "| |",
+                "3-1",
+                "|",
+                "2"
             ];
     }
 }
