@@ -5,6 +5,7 @@ import { FindPathParameters } from "./requestParameters/FindPathParameters";
 import PathFactory from "../views/PathFactory";
 import Graph from "../domain/Graph";
 import { Path } from "../views/interfaces/Path";
+import GraphFactory from "../views/GraphFactory";
 
 export default class PagesController {
 
@@ -33,7 +34,7 @@ export default class PagesController {
        {
            request.log.info( "SW - /" );
 
-           reply.view('./assets/templates/index.ejs');
+           reply.view("./assets/templates/index.ejs");
        }
        catch(error) {
             request.log.error( error );
@@ -56,11 +57,9 @@ export default class PagesController {
    
            request.log.info(`SW - graphPage from vertex id:${params.from} to vertex id:${params.to} by ${params.by}`);
 
-           const path : Path = PathFactory.Build( 
-                            params,
-                            this.graph.find( params ) );
-
-           reply.view('./assets/templates/graph.ejs', path);
+           const path  = PathFactory.Build( params, this.graph.find(params) );
+           const graph = GraphFactory.Build( this.graph.Graph );
+           reply.view("./assets/templates/graph.ejs", { ...path, graph } );
        }
        catch(error) {
             request.log.error( error );

@@ -45,6 +45,9 @@ export default class Graph {
     public get Info() : GraphInfo {
         return this.graphInfo;
     }
+    public get Graph() : ReadonlyArray<Vertex> {
+        return SampleGraph;
+    }
     /**
      *  Get a vertex from its id
      * Warning idVertex is not checked
