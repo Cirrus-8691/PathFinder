@@ -6,23 +6,23 @@
     <div>
         <a href="./">Home</a>
     </div>
-    <p>
-    Dans le &quot;graph&quot; :<br/>
-    <div style="font-family: monospace;">
-        <% graph.forEach( function(vertex){ %>
-            <%= vertex %></br>
-        <% }); %>
+    <div>
+        <br>
+        Graph :<br>
+        <div style="font-family: monospace;">
+            <% graph.forEach( function(vertex){ %>
+                <%= vertex %></br>
+            <% }); %>
+        </div><br/>
+        <br/>
+        Shorter path from vertex id:<%= fromVertexId %>
+        to vertex id:<%= toVertexId %>
+        using the metric  
+        <b><%= metricUsed %></b>
+        is :<br> 
+        <ul>
+            <li>[ <%= verticesFromTo.join(" => "); %> ] </li>
+            <li>for a total "lenght" of <%= totalWeight %></li>
+        </ul>
     </div>
-    <br/>
-    <br/>
-    Le chemin du sommet <%= fromVertexId %>
-    au sommet <%= toVertexId %>
-    le plus court en utilisant le metric 
-    <b><%= metricUsed %></b>
-    est :<br> 
-    <ul>
-        <li>[ <%= verticesFromTo.join(" => "); %> ] </li>
-        <li>pour un poids total de <%= totalWeight %></li>
-    </ul>
-    </p>
 </body>

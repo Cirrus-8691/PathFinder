@@ -32,9 +32,10 @@ export default class PagesController {
     {
        try
        {
-           request.log.info( "SW - /" );
-
-           reply.view("./assets/templates/index.ejs");
+            request.log.info( "SW - /" );
+            const graphInfo = this.graph.Info;
+            const graph = GraphFactory.Build( this.graph.Graph );
+            reply.view("./assets/templates/index.ejs", { ...graphInfo, graph } );
        }
        catch(error) {
             request.log.error( error );

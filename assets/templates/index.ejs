@@ -1,6 +1,38 @@
-<h1 style="text-align:center;">Path finder</h1>
-<br/>
-<br/>
-<a href="./graph?from=0&to=4&by=fast">Find path from 0 to 4 by fast</a>
-<br/>
-<a href="./graph?from=4&to=2&by=eco">Find path from 4 to 2 by eco</a>
+<head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1 style="text-align:center;">Path finder</h1>
+    <div>
+        <a href="./graph?from=0&to=4&by=fast">Find path from 0 to 4 by fast</a>
+    </div>
+    <div>
+        <br>
+        Graph :<br>
+        <div style="font-family: monospace;">
+            <% graph.forEach( function(vertex){ %>
+                <%= vertex %></br>
+            <% }); %>
+        </div></br>
+        Maximum (<%= maxVertexId %>) and minimum(<%= minVertexId %>) are border values for vertex id.</br>
+        <form action="graph" method="get" class="form-example">
+            Test : Find a path 
+
+            <label for="from">form vertex id</label>
+            <input type="number" id="from" name="from" required
+                min="<%= minVertexId %>" max="<%= maxVertexId %>" >
+
+            <label for="to">to id</label>
+            <input type="number" id="to" name="to" required
+                min="<%= minVertexId %>" max="<%= maxVertexId %>" >
+
+            <label for="to">by (fast, eco)</label>
+            <input type="text" id="by" name="by" required 
+                value="fast" size="4">
+
+            <button type="submit">
+                Go
+            </button>
+        </form>
+    </div>
+</body>
