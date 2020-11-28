@@ -1,6 +1,5 @@
 import { Edge } from "../domain/interfaces/Edge";
 import { Vertex } from "../domain/interfaces/Vertex";
-import { Path } from "./interfaces/Path";
 
 /**
  * To build path as expected by ihm
@@ -11,9 +10,7 @@ export default class ASCII_GraphFactory {
     private static Metric2unit = "co";
     /**
      * Build the path "view"
-     * @param params 
-     * @param vertices 
-     * @param totalWeight 
+     * @param graph 
      */
     public static Build(graph : ReadonlyArray<Vertex>) : string[]
     {
@@ -106,9 +103,9 @@ export default class ASCII_GraphFactory {
     }
     private static drawHEdge(metric1: number, metric2: number) : string [] {
         return [
-            ` ${this.drawReal(metric1)}${GraphFactory.Metric1unit} `,
+            ` ${this.drawReal(metric1)}${ASCII_GraphFactory.Metric1unit} `,
             "<------->",
-            ` ${this.drawReal(metric2)}${GraphFactory.Metric2unit} `,
+            ` ${this.drawReal(metric2)}${ASCII_GraphFactory.Metric2unit} `,
         ];
     }
     //-----------------------
@@ -122,8 +119,8 @@ export default class ASCII_GraphFactory {
     private static drawVEdge(metric1: number, metric2: number) : string [] {
         return [
             ". | ............",
-            `. | ${this.drawReal(metric1)}${GraphFactory.Metric1unit} ....`,
-            `. | ${this.drawReal(metric2)}${GraphFactory.Metric2unit} ....`,
+            `. | ${this.drawReal(metric1)}${ASCII_GraphFactory.Metric1unit} ....`,
+            `. | ${this.drawReal(metric2)}${ASCII_GraphFactory.Metric2unit} ....`,
             ". | ............",
             ];
     }
