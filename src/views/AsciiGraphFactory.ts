@@ -3,7 +3,7 @@ import { Vertex } from "../domain/interfaces/Vertex";
 /**
  * To build path as expected by ihm
  */
-export default class GraphFactory {
+export default class AsciiGraphFactory {
 
     private static Metric1unit = "km";
     private static Metric2unit = "co";

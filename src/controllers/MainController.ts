@@ -1,7 +1,8 @@
 import {FastifyInstance, FastifyReply, FastifyRequest} from "fastify";
-import GraphFactory from "../views/GraphFactory";
+import AsciiGraphFactory from "../views/AsciiGraphFactory";
 import Graph from "../domain/Graph";
 import fs from 'fs';
+import CanvasGraphFactory from "../views/CanvasGraphFactory";
 /**
  * Main application Controller
  */
@@ -41,8 +42,9 @@ export default class MainController {
        {
             request.log.info( "SW - /" );
             const graphInfo = this.graph.Info;
-            const graph = GraphFactory.Build( this.graph.Graph );
-            reply.view("./assets/templates/index.ejs", { ...graphInfo, graph } );
+            const graphAscii = AsciiGraphFactory.Build( this.graph.Graph );
+            const graphCanvas = CanvasGraphFactory.Build( this.graph.Graph );
+            reply.view("./assets/templates/index.ejs", { ...graphInfo, graphAscii, graphCanvas } );
        }
        catch(error) {
             request.log.error( error );

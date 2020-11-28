@@ -12,7 +12,8 @@
 
         <div class="layout" >
             <br>
-            <%- include('./components/graph', { graph }); %>
+            In graph :
+            <%- include('./components/graphCanvas', { graphAscii, graphCanvas }); %>
             <br/>
             Shorter path from vertex id:<%= fromVertexId %>
             to vertex id:<%= toVertexId %>

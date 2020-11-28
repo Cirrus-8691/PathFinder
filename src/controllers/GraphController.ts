@@ -2,8 +2,9 @@ import {FastifyInstance, FastifyReply, FastifyRequest} from "fastify";
 import { FindPathParameters } from "./requestParameters/FindPathParameters";
 import PathFactory from "../views/PathFactory";
 import Graph from "../domain/Graph";
-import GraphFactory from "../views/GraphFactory";
+import AsciiGraphFactory from "../views/AsciiGraphFactory";
 import MainController from "./MainController";
+import CanvasGraphFactory from "../views/CanvasGraphFactory";
 
 /**
  * Controller for Pages
@@ -39,8 +40,9 @@ export default class GraphController {
            request.log.info(`SW - graphPage from vertex id:${params.from} to vertex id:${params.to} by ${params.by}`);
 
            const path  = PathFactory.Build( params, this.graph.find(params) );
-           const graph = GraphFactory.Build( this.graph.Graph );
-           reply.view("./assets/templates/findedPath.ejs", { ...path, graph } );
+           const graphAscii = AsciiGraphFactory.Build( this.graph.Graph );
+           const graphCanvas = CanvasGraphFactory.Build( this.graph.Graph );
+           reply.view("./assets/templates/findedPath.ejs", { ...path, graphAscii, graphCanvas } );
        }
        catch(error) {
            request.log.error( error );
