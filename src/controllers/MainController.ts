@@ -68,7 +68,7 @@ export default class MainController {
     }
 
     /**
-     * logo
+     * Logo
      * @param request 
      * @param reply 
      */

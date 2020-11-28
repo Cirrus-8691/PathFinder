@@ -4,6 +4,9 @@ import PathFactory from "../views/PathFactory";
 import Graph from "../domain/Graph";
 import GraphFactory from "../views/GraphFactory";
 
+/**
+ * Controller for Pages
+ */
 export default class PagesController {
 
     private router: FastifyInstance;
