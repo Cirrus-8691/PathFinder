@@ -1,8 +1,8 @@
 import { assert } from "chai";
-import { FindPathParameters } from "../controllers/requestParameters/FindPathParameters";
-import Graph, { ByEcoPath, ByFastestPath } from "../domain/Graph";
-import { Path } from "../views/interfaces/Path";
-import PathFactory from "../views/PathFactory";
+import { FindPathParameters } from "../src/controllers/requestParameters/FindPathParameters";
+import Graph, { ByEcoPath, ByFastestPath } from "../src/domain/Graph";
+import { Path } from "../src/views/interfaces/Path";
+import PathFactory from "../src/views/PathFactory";
 
 /**
  * Create an ihm view of the fatest path

@@ -5,7 +5,7 @@ import { Vertex } from "./interfaces/Vertex";
 /**
  * The sample graph
  */
-import SampleGraph from "../assets/graph3.json";
+import SampleGraph from "../../assets/graph3.json";
 /**
  * Type used to store 2 numbers ( vertex id , vertex weight)
  */

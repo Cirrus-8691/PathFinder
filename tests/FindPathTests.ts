@@ -3,8 +3,8 @@
  * see : https://www.npmjs.com/package/chai
  */
 import { assert } from "chai";
-import { FindPathParameters } from "../controllers/requestParameters/FindPathParameters";
-import Graph, { ByEcoPath, ByFastestPath, ShorterPath } from "../domain/Graph";
+import { FindPathParameters } from "../src/controllers/requestParameters/FindPathParameters";
+import Graph, { ByEcoPath, ByFastestPath, ShorterPath } from "../src/domain/Graph";
 
 
 /**

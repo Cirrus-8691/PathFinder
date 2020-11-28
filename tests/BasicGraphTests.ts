@@ -3,8 +3,8 @@
  * see : https://www.npmjs.com/package/chai
  */
 import { assert } from "chai";
-import Graph from "../domain/Graph";
-import { Vertex } from "../domain/interfaces/Vertex";
+import Graph from "../src/domain/Graph";
+import { Vertex } from "../src/domain/interfaces/Vertex";
 /**
  * Test if graph.json is loaded
  */

@@ -78,8 +78,6 @@ export default class MainController {
        {
             request.log.info( "SW - /logo" );
 
-        //    const stream = fs.createReadStream('./assets/images/logo.svg');
-         //   reply.type('svg+xml').send(stream);
          const stream = fs.createReadStream('./assets/images/logo.jpeg');
             reply.type('jpeg').send(stream);
 

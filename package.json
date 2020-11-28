@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start": "ts-node main.ts",
+    "start": "ts-node ./src/main.ts",
     "watch": "tsc --watch --project ./tsconfig.test.json",
     "mocha:build": "tsc -p ./tsconfig.test.json",
     "mocha:run": "mocha --timeout 20000 .out/tests/_RunTests.js",
