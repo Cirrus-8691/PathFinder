@@ -3,6 +3,7 @@ import { FindPathParameters } from "./requestParameters/FindPathParameters";
 import PathFactory from "../views/PathFactory";
 import Graph from "../domain/Graph";
 import GraphFactory from "../views/GraphFactory";
+import MainController from "./MainController";
 
 /**
  * Controller for Pages
@@ -42,8 +43,8 @@ export default class PagesController {
            reply.view("./assets/templates/findedPath.ejs", { ...path, graph } );
        }
        catch(error) {
-            request.log.error( error );
-           return Promise.reject(error);
+           request.log.error( error );
+           return MainController.errorPage( error, reply);
        }
     }
 

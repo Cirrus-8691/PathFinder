@@ -46,7 +46,7 @@ export default class MainController {
        }
        catch(error) {
             request.log.error( error );
-           return Promise.reject(error);
+           return MainController.errorPage( error, reply);
        }
     }
 
@@ -108,6 +108,22 @@ export default class MainController {
        }
        catch(error) {
             request.log.error( error );
+           return Promise.reject(error);
+       }
+    }
+
+    /**
+     * Error page
+     * @param request 
+     * @param reply 
+     */
+    static errorPage(error : any,reply : FastifyReply)
+    {
+       try
+       {
+            reply.view("./assets/templates/error.ejs", { error } );
+       }
+       catch(error) {
            return Promise.reject(error);
        }
     }

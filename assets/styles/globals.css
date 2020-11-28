@@ -24,6 +24,11 @@ header {
     margin:20;
 }
 
+.error {
+    background-color: #9b1f53;
+    padding : 10;
+}
+
 footer {
     position: absolute;
     bottom: 0;
