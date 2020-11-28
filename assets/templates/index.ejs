@@ -5,10 +5,12 @@
     <body>
 
         <header>
-            <%- include('./components/header', {href : "./findPath?from=0&to=4&by=fast", trail:"Find path from 0 to 4 by fast"} ); %>
+            <%- include('./components/header', {
+                    href : "./findPath?from=0&to=4&by=fast", 
+                    trail:"Find path from 0 to 4 by fast"} ); %>
         </header>
 
-        <div>
+        <div style="margin:20;" >
             <br>
             Graph :<br>
             <div style="font-family: monospace;">
@@ -16,7 +18,8 @@
                     <%= vertex %></br>
                 <% }); %>
             </div></br>
-            Maximum (<%= maxVertexId %>) and minimum(<%= minVertexId %>) are border values for vertex id.</br>
+            Maximum (<%= maxVertexId %>) and minimum(<%= minVertexId %>) 
+            are border values for vertex id.</br>
             <form action="graph" method="get" class="form-example">
                 Test : Find a path 
 
