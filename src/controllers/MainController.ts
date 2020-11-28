@@ -25,6 +25,9 @@ export default class MainController {
 
         router.get("/logo",
             this.logo.bind(this));
+
+        router.get("/globalStyle",
+            this.globalStyle.bind(this));
     }
 
     /**
@@ -80,6 +83,27 @@ export default class MainController {
 
          const stream = fs.createReadStream('./assets/images/logo.jpeg');
             reply.type('jpeg').send(stream);
+
+       }
+       catch(error) {
+            request.log.error( error );
+           return Promise.reject(error);
+       }
+    }
+
+    /**
+     * Style CSS
+     * @param request 
+     * @param reply 
+     */
+    async globalStyle(request : FastifyRequest,reply : FastifyReply)
+    {
+       try
+       {
+            request.log.info( "SW - /globalStyle" );
+
+         const stream = fs.createReadStream('./assets/styles/global.css');
+            reply.type('text/css').send(stream);
 
        }
        catch(error) {
