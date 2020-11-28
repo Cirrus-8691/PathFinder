@@ -9,9 +9,7 @@ export default class GraphFactory {
     private static Metric2unit = "co";
     /**
      * Build the path "view"
-     * @param params 
-     * @param vertices 
-     * @param totalWeight 
+     * @param graph 
      */
     public static Build(graph : ReadonlyArray<Vertex>) : string[]
     {
