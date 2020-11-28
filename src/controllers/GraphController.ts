@@ -8,7 +8,7 @@ import MainController from "./MainController";
 /**
  * Controller for Pages
  */
-export default class PagesController {
+export default class GraphController {
 
     private router: FastifyInstance;
     private graph : Graph;

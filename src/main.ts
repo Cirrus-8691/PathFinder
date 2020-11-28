@@ -1,6 +1,6 @@
 import HttpGateway from "./HttpGateway";
 import MainController from "./controllers/MainController";
-import PagesController from "./controllers/PagesController";
+import GraphController from "./controllers/GraphController";
 
 /**
  * Main function to start server
@@ -11,7 +11,7 @@ import PagesController from "./controllers/PagesController";
 
     // Controllers
     new MainController(http.router);
-    new PagesController(http.router);
+    new GraphController(http.router);
 
     // Fastify router start
     await http.start();
