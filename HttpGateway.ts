@@ -27,7 +27,8 @@ export default class HttpGateway  {
     }
 
     async start() {
-        await this.instance.listen(this.port, "127.0.0.1");
+        //await this.instance.listen(this.port, "127.0.0.1");
+        await this.instance.listen(this.port, "localhost");
     }
 
 }

@@ -1,10 +1,7 @@
 import {FastifyInstance, FastifyReply, FastifyRequest} from "fastify";
-import { Health } from "../views/interfaces/Health";
-import fs from "fs";
 import { FindPathParameters } from "./requestParameters/FindPathParameters";
 import PathFactory from "../views/PathFactory";
 import Graph from "../domain/Graph";
-import { Path } from "../views/interfaces/Path";
 import GraphFactory from "../views/GraphFactory";
 
 export default class PagesController {
@@ -16,32 +13,11 @@ export default class PagesController {
         this.router = router
         this.graph = new Graph();
 
-        router.get("/",
-            this.homePage.bind(this));
-
         router.get<FindPathParameters>("/graph",
             this.graphPage.bind(this));
 
     }
-    /**
-     * 
-     * @param request 
-     * @param reply 
-     */
-    async homePage(request : FastifyRequest,reply : FastifyReply)
-    {
-       try
-       {
-            request.log.info( "SW - /" );
-            const graphInfo = this.graph.Info;
-            const graph = GraphFactory.Build( this.graph.Graph );
-            reply.view("./assets/templates/index.ejs", { ...graphInfo, graph } );
-       }
-       catch(error) {
-            request.log.error( error );
-           return Promise.reject(error);
-       }
-    }
+
     /**
      * 
      * @param request 

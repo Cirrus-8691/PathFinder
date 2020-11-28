@@ -1,28 +1,35 @@
-<head>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1 style="text-align:center;">Path finder</h1>
-    <div>
-        <a href="./">Home</a>
-    </div>
-    <div>
-        <br>
-        Graph :<br>
-        <div style="font-family: monospace;">
-            <% graph.forEach( function(vertex){ %>
-                <%= vertex %></br>
-            <% }); %>
-        </div><br/>
-        <br/>
-        Shorter path from vertex id:<%= fromVertexId %>
-        to vertex id:<%= toVertexId %>
-        using the metric  
-        <b><%= metricUsed %></b>
-        is :<br> 
-        <ul>
-            <li>[ <%= verticesFromTo.join(" => "); %> ] </li>
-            <li>for a total "lenght" of <%= totalWeight %></li>
-        </ul>
-    </div>
-</body>
+<html>
+    <head>
+        <%- include('./components/head'); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include('./components/header', {href : "./", trail:"Home"} ); %>
+        </header>
+
+        <div>
+            <br>
+            Graph :<br>
+            <div style="font-family: monospace;">
+                <% graph.forEach( function(vertex){ %>
+                    <%= vertex %></br>
+                <% }); %>
+            </div><br/>
+            <br/>
+            Shorter path from vertex id:<%= fromVertexId %>
+            to vertex id:<%= toVertexId %>
+            using the metric  
+            <b><%= metricUsed %></b>
+            is :<br> 
+            <ul>
+                <li>[ <%= verticesFromTo.join(" => "); %> ] </li>
+                <li>for a total "lenght" of <%= totalWeight %></li>
+            </ul>
+        </div>
+
+        <footer>
+            <%- include('./components/footer'); %>
+        </footer>
+    </body>
+</html>
