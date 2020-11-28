@@ -12,12 +12,8 @@
 
         <div class="layout" >
             <br>
-            Graph :<br>
-            <div style="font-family: monospace;">
-                <% graph.forEach( function(vertex){ %>
-                    <%= vertex %></br>
-                <% }); %>
-            </div></br>
+            <%- include('./components/graph', { graph }); %>
+            <br>
             Maximum (<%= maxVertexId %>) and minimum(<%= minVertexId %>) 
             are border values for vertex id.</br>
             <form action="findPath" method="get" class="form-example">

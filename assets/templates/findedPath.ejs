@@ -12,12 +12,7 @@
 
         <div class="layout" >
             <br>
-            Graph :<br>
-            <div style="font-family: monospace;">
-                <% graph.forEach( function(vertex){ %>
-                    <%= vertex %></br>
-                <% }); %>
-            </div><br/>
+            <%- include('./components/graph', { graph }); %>
             <br/>
             Shorter path from vertex id:<%= fromVertexId %>
             to vertex id:<%= toVertexId %>
