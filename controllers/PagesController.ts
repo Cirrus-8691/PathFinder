@@ -13,21 +13,21 @@ export default class PagesController {
         this.router = router
         this.graph = new Graph();
 
-        router.get<FindPathParameters>("/graph",
-            this.graphPage.bind(this));
+        router.get<FindPathParameters>("/findPath",
+            this.findedPathPage.bind(this));
 
     }
 
     /**
-     * 
+     * Graph find path result
      * @param request 
      * @param reply 
      */
-    async graphPage(request : FastifyRequest<FindPathParameters> ,reply : FastifyReply)
+    async findedPathPage(request : FastifyRequest<FindPathParameters> ,reply : FastifyReply)
     {
        try
        {
-           request.log.info( "SW - graphPage" );
+           request.log.info( "SW - findedPathPage" );
            const params = request.query as FindPathParameters;
            params.from  = +params.from; // cast "from" string to number
            params.to    = +params.to;   // cast "to"   string to number
@@ -36,7 +36,7 @@ export default class PagesController {
 
            const path  = PathFactory.Build( params, this.graph.find(params) );
            const graph = GraphFactory.Build( this.graph.Graph );
-           reply.view("./assets/templates/graph.ejs", { ...path, graph } );
+           reply.view("./assets/templates/findedPath.ejs", { ...path, graph } );
        }
        catch(error) {
             request.log.error( error );
