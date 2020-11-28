@@ -1,6 +1,4 @@
-import { Edge } from "../domain/interfaces/Edge";
 import { Vertex } from "../domain/interfaces/Vertex";
-import { Path } from "./interfaces/Path";
 
 /**
  * To build path as expected by ihm
