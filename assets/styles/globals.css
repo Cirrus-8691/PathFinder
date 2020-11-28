@@ -11,3 +11,7 @@ header {
 .logo {
     text-align:left; display: inline-block; width: 20%;
 }
+
+.title {
+    text-align:center; display: inline-block; width: 79%;
+}
