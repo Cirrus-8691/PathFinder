@@ -5,13 +5,15 @@
         function drawGraph() {
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
-            ctx.font = '48px serif';
-            ctx.fillStyle = 'rgb(25, 127, 224)';
+            ctx.font = '16px serif';
+            
             <% graphCanvas.forEach( function(vertex){ %>
                 ctx.beginPath();
+                ctx.fillStyle = 'rgb(25, 127, 224)';
                 ctx.arc(<%= vertex %>, 25, 0, Math.PI * 2, true);
                 ctx.fill();
-                ctx.fillText('H', <%= vertex %>);
+                ctx.fillStyle = 'black';
+                ctx.fillText('1', <%= vertex %>);
             <% }); %>
         }
     </script>
