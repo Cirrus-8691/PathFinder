@@ -20,6 +20,10 @@ header {
     padding-left: 40;
 }
 
+.layout {
+    margin:20;
+}
+
 footer {
     position: absolute;
     bottom: 0;
