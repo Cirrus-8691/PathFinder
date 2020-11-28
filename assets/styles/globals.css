@@ -24,6 +24,11 @@ header {
     margin:20;
 }
 
+.graph {
+    font-family: monospace;
+    margin:40;
+}
+
 .error {
     background-color: #9b1f53;
     padding : 10;
