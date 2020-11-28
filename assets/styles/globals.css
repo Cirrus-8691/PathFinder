@@ -15,3 +15,17 @@ header {
 .title {
     text-align:center; display: inline-block; width: 79%;
 }
+
+.trail {
+    padding-left: 40;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    display: flex;
+    justify-content: center; 
+    border-top: 2px solid #eaeaea;
+    height: 20;
+}
