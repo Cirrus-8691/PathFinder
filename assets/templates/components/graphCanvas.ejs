@@ -1,7 +1,20 @@
 
 <div class="graph">
     In graph :<br>
-    <%= graphCanvas %>
+    <script type="text/javascript">
+        function drawGraph() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.font = '48px serif';
+            ctx.fillStyle = 'rgb(25, 127, 224)';
+            <% graphCanvas.forEach( function(vertex){ %>
+                ctx.beginPath();
+                ctx.arc(<%= vertex %>, 25, 0, Math.PI * 2, true);
+                ctx.fill();
+                ctx.fillText('H', <%= vertex %>);
+            <% }); %>
+        }
+    </script>
     <canvas id="canvas" width="300" height="300">
         <%- include('./graphAscii', { graphAscii }); %>
     </canvas>

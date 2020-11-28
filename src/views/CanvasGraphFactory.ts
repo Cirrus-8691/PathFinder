@@ -13,6 +13,12 @@ export default class CanvasGraphFactory {
      */
     public static Build(graph : ReadonlyArray<Vertex>) : string[]
     {
-       return [""];
+       return [
+           "040, 040",
+           "140, 040",
+           "040, 140",
+           "140, 140", 
+           "040, 240",
+        ];
     };
 }
