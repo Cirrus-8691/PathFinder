@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <%- include('./components/head'); %>
+    </head>
+    <body>
+
+        <header>
+            <%- include('./components/header', {
+                href : "./", 
+                trail:"Home" } ); %>
+        </header>
+
+        <div style="margin:20;" >
+            Error:<br/>
+            <%= error %>
+        </div>
+
+        <footer>
+            <%- include('./components/footer'); %>
+        </footer>
+    </body>
+</html>
