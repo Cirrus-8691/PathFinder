@@ -102,7 +102,7 @@ export default class MainController {
        {
             request.log.info( "SW - /globalStyle" );
 
-         const stream = fs.createReadStream('./assets/styles/global.css');
+         const stream = fs.createReadStream('./assets/styles/globals.css');
             reply.type('text/css').send(stream);
 
        }
