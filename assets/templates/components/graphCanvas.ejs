@@ -3,22 +3,47 @@
     In graph :<br>
     <br>
     <script type="text/javascript">
+        const radius = 30;
+        const dx = 40;
+        const dy = 40;
+        const space = 150;
+        function drawVertex(id, x, y, ctx) {
+            ctx.beginPath();
+            ctx.fillStyle = 'rgb(25, 127, 224)';
+            ctx.arc( x * space + dx, y * space + dy, radius, 0, Math.PI * 2, true);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc( x * space + dx, y * space + dy, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fillText(id, x * space + dx -5, y * space + dy +5 );
+        }
+        function drawEdge(x1, y1, x2, y2, m1, m2, ctx) {
+            ctx.beginPath();
+            if(y1===y2) {
+                ctx.moveTo(x1 * space + dx + radius, y1 * space + dy);
+                ctx.lineTo(x2 * space + dx - radius, y2 * space + dy);
+            } 
+            else {
+                ctx.moveTo(x1 * space + dx , y1 * space + dy + radius);
+                ctx.lineTo(x2 * space + dx , y2 * space + dy - radius);
+            }
+            ctx.stroke();
+        }
         function drawGraph() {
             const canvas = document.getElementById('canvas');
             const ctx = canvas.getContext('2d');
             ctx.font = '16px sans serif';
             let id = 0;
-            <% graphCanvas.forEach( function(vertex){ %>
-                ctx.beginPath();
-                ctx.fillStyle = 'rgb(25, 127, 224)';
-                ctx.arc(<%= vertex %>, 25, 0, Math.PI * 2, true);
-                ctx.fill();
-                ctx.fillStyle = 'black';
-                ctx.fillText(id++, <%= vertex %>);
+            <% graphCanvas.vertices.forEach( function(vertex){ %>
+                drawVertex(id++, <%= vertex %>, ctx);
+            <% }); %>
+            <% graphCanvas.edges.forEach( function(edge){ %>
+                drawEdge(<%= edge %>, 0, 0, ctx);
             <% }); %>
         }
     </script>
-    <canvas id="canvas" width="300" height="300">
+    <canvas id="canvas" width="400" height="400">
         <%- include('./graphAscii', { graphAscii }); %>
     </canvas>
 </div>

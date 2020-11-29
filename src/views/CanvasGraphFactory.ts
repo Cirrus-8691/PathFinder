@@ -11,14 +11,23 @@ export default class CanvasGraphFactory {
      * Build the path "view"
      * @param graph
      */
-    public static Build(graph : ReadonlyArray<Vertex>) : string[]
+    public static Build(graph : ReadonlyArray<Vertex>) //: string[]
     {
-       return [
-           "040, 040",
-           "140, 140",
-           "040, 240",
-           "040, 140",
-           "140, 040",
-        ];
+      return  { 
+            vertices : [
+                "0, 0",
+                "1, 1",
+                "0, 2",
+                "0, 1",
+                "1, 0",
+            ],
+            edges : [
+                "0, 0, 1, 0",
+                "1, 0, 1, 1",
+                "0, 1, 1, 1",
+                "0, 0, 0, 1",
+                "0, 1, 0, 2",
+            ]
+        };
     };
 }
