@@ -6,7 +6,7 @@
 
         <header>
             <%- include('./components/header', {
-                href : "./", 
+                href : "./",
                 trail:"Home" } ); %>
         </header>
 
@@ -16,9 +16,8 @@
             <br/>
             Shorter path from vertex id:<%= path.fromVertexId %>
             to vertex id:<%= path.toVertexId %>
-            using the metric  
-            <b><%= path.metricUsed %></b>
-            is :<br> 
+            using the metric 
+            <b><%= path.metricUsed %></b> is :<br> 
             <ul>
                 <li id="path">[ <%= path.verticesFromTo.join(" => "); %> ] </li>
                 <li>for a total "lenght" of <%= path.totalWeight %></li>
