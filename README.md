@@ -33,7 +33,7 @@ npm start
 </p>
 
 - As a sample you can find the fastest path from vertex id: 1 to vertex id: 4 by typing<br> 
-<a href="http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=fast">`http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=fast`</a>
+<a href="http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=km">`http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=km`</a>
 
  - Be careful the service checks the border of the vertex's id and can throw exceptions.<br>
  Sample :

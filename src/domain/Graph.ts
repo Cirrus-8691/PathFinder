@@ -18,11 +18,11 @@ export type ShorterPath = [number[],number];
 /** 
  * string to identify the metric used to find the fastest path 
  * */
-export const ByFastestPath = "fast";
+export const ByFastestPath = "km";
 /** 
  * string to identify the metric used to find the eco path 
  * */
-export const ByEcoPath = "eco";
+export const ByEcoPath = "co";
 /**
  * Manage path in Graph
  */
@@ -186,7 +186,7 @@ export default class Graph {
     }
 
     /**
-    * @param param FindPath Parameters : from vertex id, to vertex id, by { "eco","fast" }
+    * @param param FindPath Parameters : from vertex id, to vertex id, by { "km","co" }
     */
     public find( param : FindPathParameters ) : ShorterPath {
         // check parameters
