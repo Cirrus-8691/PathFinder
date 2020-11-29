@@ -17,11 +17,11 @@ header {
 }
 
 .trail {
-    padding-left: 40;
+    padding-left: 40px;
 }
 
 .layout {
-    margin:20;
+    margin:20px;
 }
 
 .graphAscii {
@@ -30,14 +30,14 @@ header {
 
 .graph{
     margin : 0;
-    margin-left: 40;
-    margin-right: 40;
+    margin-left: 40px;
+    margin-right: 40px;
     text-align:center;
 }
 
 .error {
     background-color: #9b1f53;
-    padding : 10;
+    padding : 10px;
 }
 
 footer {
@@ -47,5 +47,5 @@ footer {
     display: flex;
     justify-content: center; 
     border-top: 2px solid #eaeaea;
-    height: 20;
+    height: 20px;
 }
