@@ -14,7 +14,10 @@
     "watch": "tsc --watch --project ./tsconfig.test.json",
     "mocha:build": "tsc -p ./tsconfig.test.json",
     "mocha:run": "mocha --timeout 20000 .out/tests/_RunTests.js",
-    "test": "npm-run-all -s mocha:build mocha:run"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:cypress": "start-server-and-test start http://localhost:3000 cypress:run",
+    "test": "npm-run-all -s mocha:build mocha:run cypress:run"
   },
   "dependencies": {
     "@types/chai": "^4.2.14",
@@ -29,6 +32,8 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.2",
+    "cypress": "^6.0.0",
+    "start-server-and-test": "^1.11.6",
     "ts-node": "^8.9.0",
     "typescript": "^4.0.3"
   }

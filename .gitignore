@@ -1,8 +1,10 @@
-#DS_Store
-.DS_Store
-
 #Debug Ts
 .out
+# Cypress samples
+cypress/integration/examples/
+
+#DS_Store
+.DS_Store
 
 # Runtime data
 pids
