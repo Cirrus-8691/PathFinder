@@ -2,11 +2,9 @@
     <%- include('./components/head'); %>
     <body onload="drawGraph();">
 
-        <header>
-            <%- include('./components/header', {
+        <%- include('./components/header', {
                     href : "./findPath?from=0&to=4&by=km", 
                     trail:"Find path from 0 to 4 by km"} ); %>
-        </header>
 
         <div class="layout" >
             <form action="findPath" method="get" class="form-example">

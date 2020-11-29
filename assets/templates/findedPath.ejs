@@ -2,11 +2,9 @@
     <%- include('./components/head'); %>
     <body onload="drawGraph();">
 
-        <header>
-            <%- include('./components/header', {
+        <%- include('./components/header', {
                 href : "./",
                 trail:"Home" } ); %>
-        </header>
 
         <div class="layout" >
             Shorter path from vertex id:<%= path.fromVertexId %>
