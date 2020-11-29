@@ -16,15 +16,15 @@
   />
   <img
       alt="Server:Fastify"
-      src="https://img.shields.io/badge/Server-Fastify-blue"
+      src="https://img.shields.io/badge/Server-Fastify-45d298"
   />
   <img
       alt="Templates:ejs"
-      src="https://img.shields.io/badge/Templates-Ejs-blue"
+      src="https://img.shields.io/badge/Templates-Ejs-45d298"
   />
 </p>
 Author : Frédéric Diaz<br>
-This is a micro service used to find the fastest or eco path between two vertices in a graph.
+This is a web site used to find the fastest or eco path between two vertices in a graph.
 
 ## Getting started
  - Donwload the source, then to install dependencies, type :
