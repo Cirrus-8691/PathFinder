@@ -18,7 +18,7 @@
             }
             return ok;
         }
-        function colored(ctx, id1, id2) {
+        function useColor(ctx, id1, id2) {
             if( <%= path.verticesFromTo %>
                 && edges.includes(id1)
                 && edgeExistsBetween(id1, id2)
@@ -32,7 +32,7 @@
         }
         function drawVertex(id, x, y, ctx) {
             ctx.beginPath();
-            colored(ctx, id , -1);
+            useColor(ctx, id , -1);
             ctx.arc( x * space + dx, y * space + dy, radius, 0, Math.PI * 2, true);
             ctx.fill();
             ctx.fillStyle = 'black';
@@ -42,7 +42,7 @@
             ctx.fillText(id, x * space + dx -5, y * space + dy +5 );
         }
         function drawEdge(id1, x1, y1, id2, x2, y2, m1, m2, ctx) {
-            colored(ctx, id1 , id2);
+            useColor(ctx, id1 , id2);
             ctx.beginPath();
             ctx.lineWidth = 2;
             if(y1===y2) {
