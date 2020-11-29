@@ -2,6 +2,7 @@
 .out
 # Cypress samples
 cypress/integration/examples/
+cypress/videos/
 
 #DS_Store
 .DS_Store

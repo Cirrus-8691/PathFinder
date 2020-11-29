@@ -15,6 +15,9 @@ export default class MainController {
         this.router = router
         this.graph = new Graph();
 
+        router.head("/",
+            this.head.bind(this));
+
         router.get("/",
             this.homePage.bind(this));
 
@@ -28,6 +31,25 @@ export default class MainController {
             this.globalStyle.bind(this));
     }
 
+
+    /**
+     * Just test if server is alive
+     * @param request 
+     * @param reply 
+     */
+    async head(request : FastifyRequest,reply : FastifyReply)
+    {
+       try
+       {
+            request.log.info( "HEAD - /" );
+            const stream = fs.createReadStream("./assets/templates/components/head.ejs");
+            reply.type('text/html').send(stream);
+       }
+       catch(error) {
+           request.log.error( error );
+           return MainController.errorPage( error, reply);
+       }
+    }
     /**
      * Home page
      * @param request 
