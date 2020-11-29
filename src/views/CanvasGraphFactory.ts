@@ -11,7 +11,7 @@ export default class CanvasGraphFactory {
      * Build the path "view"
      * @param graph
      */
-    public static Build(graph : ReadonlyArray<Vertex>) //: string[]
+    public static Build(graph : ReadonlyArray<Vertex>)
     {
       return  { 
             vertices : [
