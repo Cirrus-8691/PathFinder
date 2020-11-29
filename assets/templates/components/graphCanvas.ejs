@@ -21,12 +21,18 @@
         function drawEdge(x1, y1, x2, y2, m1, m2, ctx) {
             ctx.beginPath();
             if(y1===y2) {
+                // horizontal edge
                 ctx.moveTo(x1 * space + dx + radius, y1 * space + dy);
                 ctx.lineTo(x2 * space + dx - radius, y2 * space + dy);
+                ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + 2 * radius + 16, y1 * space + dy -2 );
+                ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + 2 * radius + 16, y1 * space + dy + 16 );
             } 
             else {
+                // vertical edge
                 ctx.moveTo(x1 * space + dx , y1 * space + dy + radius);
                 ctx.lineTo(x2 * space + dx , y2 * space + dy - radius);
+                ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 );
+                ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 + 16 );
             }
             ctx.stroke();
         }
@@ -39,7 +45,7 @@
                 drawVertex(id++, <%= vertex %>, ctx);
             <% }); %>
             <% graphCanvas.edges.forEach( function(edge){ %>
-                drawEdge(<%= edge %>, 0, 0, ctx);
+                drawEdge(<%= edge %>, ctx);
             <% }); %>
         }
     </script>
