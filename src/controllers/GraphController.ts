@@ -42,7 +42,7 @@ export default class GraphController {
            const path  = PathFactory.Build( params, this.graph.find(params) );
            const graphAscii = AsciiGraphFactory.Build( this.graph.Graph );
            const graphCanvas = CanvasGraphFactory.Build( this.graph.Graph );
-           reply.view("./assets/templates/findedPath.ejs", { ...path, graphAscii, graphCanvas } );
+           reply.view("./assets/templates/findedPath.ejs", { path, graphAscii, graphCanvas } );
        }
        catch(error) {
            request.log.error( error );

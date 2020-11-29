@@ -12,7 +12,7 @@
 
         <div class="layout" >
             <br>
-            <%- include('./components/graphCanvas', { graphAscii, graphCanvas }); %>
+            <%- include('./components/graphCanvas', { path : { verticesFromTo : false }, graphAscii, graphCanvas }); %>
             <br>
             Maximum (<%= maxVertexId %>) and minimum(<%= minVertexId %>) 
             are border values for vertex id.</br>

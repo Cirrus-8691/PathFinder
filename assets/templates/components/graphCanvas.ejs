@@ -7,9 +7,25 @@
         const dx = 40;
         const dy = 40;
         const space = 150;
+
+        function colored(ctx, id1, id2) {
+            if( <%= path.verticesFromTo %>
+                && [<%= path.verticesFromTo %>].includes(id1)
+                && (
+                    id2 < 0
+                    ||
+                    id2 > 0 && [<%= path.verticesFromTo %>].includes(id2)
+                )
+            ) {
+                ctx.fillStyle = 'green';
+            } 
+            else {
+                ctx.fillStyle = 'rgb(25, 127, 224)';
+            }
+        }
         function drawVertex(id, x, y, ctx) {
             ctx.beginPath();
-            ctx.fillStyle = 'rgb(25, 127, 224)';
+            colored(ctx, id , -1);
             ctx.arc( x * space + dx, y * space + dy, radius, 0, Math.PI * 2, true);
             ctx.fill();
             ctx.fillStyle = 'black';
@@ -18,12 +34,13 @@
             ctx.stroke();
             ctx.fillText(id, x * space + dx -5, y * space + dy +5 );
         }
-        function drawEdge(x1, y1, x2, y2, m1, m2, ctx) {
+        function drawEdge(id1, x1, y1, id2, x2, y2, m1, m2, ctx) {
             ctx.beginPath();
             if(y1===y2) {
                 // horizontal edge
                 ctx.moveTo(x1 * space + dx + radius, y1 * space + dy);
                 ctx.lineTo(x2 * space + dx - radius, y2 * space + dy);
+                colored(ctx, id1 , id2);
                 ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + 2 * radius + 16, y1 * space + dy -2 );
                 ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + 2 * radius + 16, y1 * space + dy + 16 );
             } 
@@ -31,6 +48,7 @@
                 // vertical edge
                 ctx.moveTo(x1 * space + dx , y1 * space + dy + radius);
                 ctx.lineTo(x2 * space + dx , y2 * space + dy - radius);
+                colored(ctx, id1 , id2);
                 ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 );
                 ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 + 16 );
             }

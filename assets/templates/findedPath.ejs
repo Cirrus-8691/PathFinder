@@ -12,16 +12,16 @@
 
         <div class="layout" >
             <br>
-            <%- include('./components/graphCanvas', { graphAscii, graphCanvas }); %>
+            <%- include('./components/graphCanvas', { path, graphAscii, graphCanvas }); %>
             <br/>
-            Shorter path from vertex id:<%= fromVertexId %>
-            to vertex id:<%= toVertexId %>
+            Shorter path from vertex id:<%= path.fromVertexId %>
+            to vertex id:<%= path.toVertexId %>
             using the metric  
-            <b><%= metricUsed %></b>
+            <b><%= path.metricUsed %></b>
             is :<br> 
             <ul>
-                <li>[ <%= verticesFromTo.join(" => "); %> ] </li>
-                <li>for a total "lenght" of <%= totalWeight %></li>
+                <li>[ <%= path.verticesFromTo.join(" => "); %> ] </li>
+                <li>for a total "lenght" of <%= path.totalWeight %></li>
             </ul>
         </div>
 
