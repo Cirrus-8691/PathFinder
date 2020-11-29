@@ -11,9 +11,6 @@ export default class MainController {
     private router: FastifyInstance;
     private graph : Graph;
 
-    private version : string = "1.0";
-    private apiName : string = "pathfinder-api";
-
     constructor(router: FastifyInstance) {
         this.router = router
         this.graph = new Graph();
@@ -83,7 +80,7 @@ export default class MainController {
        {
             request.log.info( "SW - /logo" );
 
-         const stream = fs.createReadStream('./assets/images/logo.jpeg');
+            const stream = fs.createReadStream('./assets/images/logo.jpeg');
             reply.type('jpeg').send(stream);
 
        }
@@ -104,7 +101,7 @@ export default class MainController {
        {
             request.log.info( "SW - /globalStyle" );
 
-         const stream = fs.createReadStream('./assets/styles/globals.css');
+            const stream = fs.createReadStream('./assets/styles/globals.css');
             reply.type('text/css').send(stream);
 
        }
