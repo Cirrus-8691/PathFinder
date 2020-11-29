@@ -7,8 +7,20 @@
       />
   </a>
   <img
-      alt="license:GPL"
+      alt="Language:TypeScript"
       src="https://img.shields.io/badge/Language-TypeScript-green"
+  />
+  <img
+      alt="Language:Javascript"
+      src="https://img.shields.io/badge/Language-Javascript-green"
+  />
+  <img
+      alt="Server:Fastify"
+      src="https://img.shields.io/badge/Server-Fastify-blue"
+  />
+  <img
+      alt="Templates:ejs"
+      src="https://img.shields.io/badge/Templates-Ejs-blue"
   />
 </p>
 Author : Frédéric Diaz<br>
@@ -23,8 +35,8 @@ npm install
 ```bash
 npm start
 ```
-- Open <a href="http://127.0.0.1:3000/api">`http://127.0.0.1:3000/api`</a> url in your browser.
-- You should see `Hello, friend` with a set of sample url to run the service.
+- Open <a href="http://127.0.0.1:3000">`http://127.0.0.1:3000`</a> url in your browser.
+- You should a simple page.
 <p align="center">
     <img
       alt="hello"
@@ -33,7 +45,7 @@ npm start
 </p>
 
 - As a sample you can find the fastest path from vertex id: 1 to vertex id: 4 by typing<br> 
-<a href="http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=km">`http://127.0.0.1:3000/api/graph/findPath?from=1&to=4&by=km`</a>
+<a href="http://127.0.0.1:3000/findPath?from=1&to=4&by=km">`http://127.0.0.1:3000/findPath?from=1&to=4&by=km`</a>
 
  - Be careful the service checks the border of the vertex's id and can throw exceptions.<br>
  Sample :
