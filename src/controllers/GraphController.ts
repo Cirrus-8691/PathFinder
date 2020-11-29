@@ -20,7 +20,6 @@ export default class GraphController {
 
         router.get<FindPathParameters>("/findPath",
             this.findedPathPage.bind(this));
-
     }
 
     /**
@@ -36,7 +35,7 @@ export default class GraphController {
            const params = request.query as FindPathParameters;
            params.from  = +params.from; // cast "from" string to number
            params.to    = +params.to;   // cast "to"   string to number
-   
+
            request.log.info(`SW - graphPage from vertex id:${params.from} to vertex id:${params.to} by ${params.by}`);
 
            const path  = PathFactory.Build( params, this.graph.find(params) );
