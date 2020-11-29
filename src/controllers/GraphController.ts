@@ -7,7 +7,7 @@ import MainController from "./MainController";
 import CanvasGraphFactory from "../views/CanvasGraphFactory";
 
 /**
- * Controller for Pages
+ * Controller for Graph pages
  */
 export default class GraphController {
 
