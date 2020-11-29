@@ -10,18 +10,18 @@
         const edges = [<%= path.verticesFromTo %>];
 
         function edgeExistsBetween(id1,id2) {
-            const index1 = edges.indexOf(id1,0);
-            const index2 = edges.indexOf(id2,0);
-            return Math.abs(index1-index2) === 1;
+            let ok = true;
+            if(id2>=0) {
+                const index1 = edges.indexOf(id1,0);
+                const index2 = edges.indexOf(id2,0);
+                ok = Math.abs(index1 - index2) === 1;
+            }
+            return ok;
         }
         function colored(ctx, id1, id2) {
             if( <%= path.verticesFromTo %>
                 && edges.includes(id1)
-                && (
-                    id2 < 0
-                    ||
-                    id2 > 0 && edgeExistsBetween(id1, id2)
-                )
+                && edgeExistsBetween(id1, id2)
             ) {
                 ctx.fillStyle = 'green';
             } 
