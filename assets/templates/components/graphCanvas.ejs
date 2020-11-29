@@ -7,14 +7,20 @@
         const dx = 40;
         const dy = 40;
         const space = 150;
+        const edges = [<%= path.verticesFromTo %>];
 
+        function edgeExistsBetween(id1,id2) {
+            const index1 = edges.indexOf(id1,0);
+            const index2 = edges.indexOf(id2,0);
+            return Math.abs(index1-index2) === 1;
+        }
         function colored(ctx, id1, id2) {
             if( <%= path.verticesFromTo %>
-                && [<%= path.verticesFromTo %>].includes(id1)
+                && edges.includes(id1)
                 && (
                     id2 < 0
                     ||
-                    id2 > 0 && [<%= path.verticesFromTo %>].includes(id2)
+                    id2 > 0 && edgeExistsBetween(id1, id2)
                 )
             ) {
                 ctx.fillStyle = 'green';
@@ -22,6 +28,7 @@
             else {
                 ctx.fillStyle = 'rgb(25, 127, 224)';
             }
+            ctx.strokeStyle = ctx.fillStyle;
         }
         function drawVertex(id, x, y, ctx) {
             ctx.beginPath();
@@ -35,12 +42,13 @@
             ctx.fillText(id, x * space + dx -5, y * space + dy +5 );
         }
         function drawEdge(id1, x1, y1, id2, x2, y2, m1, m2, ctx) {
+            colored(ctx, id1 , id2);
             ctx.beginPath();
+            ctx.lineWidth = 2;
             if(y1===y2) {
                 // horizontal edge
                 ctx.moveTo(x1 * space + dx + radius, y1 * space + dy);
                 ctx.lineTo(x2 * space + dx - radius, y2 * space + dy);
-                colored(ctx, id1 , id2);
                 ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + 2 * radius + 16, y1 * space + dy -2 );
                 ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + 2 * radius + 16, y1 * space + dy + 16 );
             } 
@@ -48,7 +56,6 @@
                 // vertical edge
                 ctx.moveTo(x1 * space + dx , y1 * space + dy + radius);
                 ctx.lineTo(x2 * space + dx , y2 * space + dy - radius);
-                colored(ctx, id1 , id2);
                 ctx.fillText(m1 + "<%= graphCanvas.metrics[0] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 );
                 ctx.fillText(m2 + "<%= graphCanvas.metrics[1] %>", x1 * space + dx + 2, y1 * space + dy + space / 2 + 16 );
             }
