@@ -31,9 +31,7 @@
                 Maximum: <%= maxVertexId %> and minimum :<%= minVertexId %> 
                 are border values for vertex id.
             </form>
-            <br>
             <%- include('./components/graphCanvas', { path : { verticesFromTo : undefined }, graphAscii, graphCanvas }); %>
-            <br>            
         </div>
 
         <%- include('./components/footer'); %>

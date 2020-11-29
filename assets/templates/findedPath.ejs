@@ -17,9 +17,7 @@
                 <li id="path">[ <%= path.verticesFromTo.join(" => "); %> ] </li>
                 <li>for a total "lenght" of <%= path.totalWeight %></li>
             </ul>
-            <br>
             <%- include('./components/graphCanvas', { path, graphAscii, graphCanvas }); %>
-            <br/>
         </div>
 
         <%- include('./components/footer'); %>
