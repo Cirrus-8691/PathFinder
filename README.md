@@ -48,14 +48,6 @@ npm start
 <a href="http://127.0.0.1:3000/findPath?from=1&to=4&by=km">`http://127.0.0.1:3000/findPath?from=1&to=4&by=km`</a>
 
  - Be careful the service checks the border of the vertex's id and can throw exceptions.<br>
- Sample :
-<p align="center">
-    <img
-      alt="error 500"
-      src="./assets/images/exception.jpeg"
-    />
-</p>
-
 
 ## Other tests
 - To run the unit tests, type :
@@ -69,20 +61,6 @@ The Github repository has two workflows in "Actions" defined in the
 The <a href="./.github/workflows/manual.yml">Manual workflow</a> can be used to run (click on "Run Workflow" button) the unit tests in the Github pipeline. NB : Refresh the HTML page if nothing moves.
 <br/>
 The other workflow <a href="./.github/workflows/node.js.yml">Node.js CI</a> is used for continuous integration.
-<p align="center">
-    <img
-      alt="CI"
-      src="./assets/images/ci.jpeg"
-      width="600"
-    />
-</p>
+<br/>
 You can see the result of the Unit tests in the web console.
-<br/>
-<br/>
-<p align="center">
-    <img
-      alt="CI"
-      src="./assets/images/viewTestResult.jpeg"
-      width="600"
-    />
-</p>
+
