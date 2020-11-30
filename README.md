@@ -22,6 +22,9 @@
       alt="Templates:ejs"
       src="https://img.shields.io/badge/Templates-Ejs-45d298"
   />
+
+  ![Node.js CI](https://github.com/Cirrus-8691/PathFinder/workflows/Node.js%20CI/badge.svg)
+  
 </p>
 Author : Frédéric Diaz<br>
 This is a web site used to find the fastest or eco path between two vertices in a graph.
