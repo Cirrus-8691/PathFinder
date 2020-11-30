@@ -14,14 +14,18 @@
       alt="Language:Javascript"
       src="https://img.shields.io/badge/Language-Javascript-green"
   />
-  <img
-      alt="Server:Fastify"
-      src="https://img.shields.io/badge/Server-Fastify-45d298"
-  />
-  <img
-      alt="Templates:ejs"
-      src="https://img.shields.io/badge/Templates-Ejs-45d298"
-  />
+  <a href="https://www.fastify.io/">
+    <img
+        alt="Server:Fastify"
+        src="https://img.shields.io/badge/Server-Fastify-45d298"
+    />
+  </a>
+  <a href="https://ejs.co/">
+    <img
+        alt="Templates:ejs"
+        src="https://img.shields.io/badge/Templates-Ejs-45d298"
+    />
+  </a>
 
   ![Node.js CI](https://github.com/Cirrus-8691/PathFinder/workflows/Node.js%20CI/badge.svg)
   
