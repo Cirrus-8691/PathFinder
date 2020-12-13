@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 - Open <a href="http://127.0.0.1:3000">`http://127.0.0.1:3000`</a> url in your browser.
-- You should a simple page.
+- You should see a simple page.
 <p align="center">
     <img
       alt="hello"
