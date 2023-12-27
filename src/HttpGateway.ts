@@ -1,5 +1,5 @@
 import fastify, {FastifyInstance} from "fastify"
-import pointOfView from "point-of-view";
+import pointOfView from "@fastify/view";
 import ejs from "ejs";
 /**
  * Define the HttpGateway server

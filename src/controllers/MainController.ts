@@ -42,8 +42,8 @@ export default class MainController {
        try
        {
             request.log.info( "HEAD - /" );
-            const stream = fs.createReadStream("./assets/templates/components/head.ejs");
-            reply.type('text/html').send(stream);
+            const buffer = fs.readFileSync("./assets/templates/components/head.ejs");
+            reply.type('text/html').send(buffer);
        }
        catch(error) {
            request.log.error( error );
@@ -63,7 +63,7 @@ export default class MainController {
             const graphInfo = this.graph.Info;
             const graphAscii = AsciiGraphFactory.Build( this.graph.Graph );
             const graphCanvas = CanvasGraphFactory.Build( this.graph.Graph );
-            reply.view("./assets/templates/index.ejs", { ...graphInfo, graphAscii, graphCanvas } );
+            return reply.view("./assets/templates/index.ejs", { ...graphInfo, graphAscii, graphCanvas } );
        }
        catch(error) {
             request.log.error( error );
@@ -82,8 +82,8 @@ export default class MainController {
        {
             request.log.info( "SW - /favicon" );
 
-            const stream = fs.createReadStream('./assets/images/favicon.ico');
-            reply.type('vnd.microsoft.icon').send(stream);
+            const buffer = fs.readFileSync('./assets/images/favicon.ico');
+            reply.type('vnd.microsoft.icon').send(buffer);
        }
        catch(error) {
             request.log.error( error );
@@ -102,8 +102,8 @@ export default class MainController {
        {
             request.log.info( "SW - /logo" );
 
-            const stream = fs.createReadStream('./assets/images/logo.jpeg');
-            reply.type('jpeg').send(stream);
+            const buffer = fs.readFileSync('./assets/images/logo.jpeg');
+            reply.type('image/jpeg').send(buffer);
 
        }
        catch(error) {
@@ -123,8 +123,8 @@ export default class MainController {
        {
             request.log.info( "SW - /globalStyle" );
 
-            const stream = fs.createReadStream('./assets/styles/globals.css');
-            reply.type('text/css').send(stream);
+            const buffer = fs.readFileSync('./assets/styles/globals.css');
+            reply.type('text/css').send(buffer);
 
        }
        catch(error) {
